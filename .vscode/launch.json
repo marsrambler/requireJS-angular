@@ -1,0 +1,66 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+/*     "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "C:\\Users\\Yiz56865\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\bin\\grunt",
+            "args": ["unit-test"],
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "attach to process",
+            "port": 5858
+        }
+    ] */
+
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch protractor",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "stopOnEntry": false,
+            "args": ["${workspaceRoot}/test/protractor-conf.js"]          
+        },
+        {
+            "name": "Launch",
+            "type": "node",
+            "request": "launch",
+            "program": "C:\\Users\\Yiz56865\\AppData\\Roaming\\npm\\node_modules\\grunt-cli\\bin\\grunt",
+            "stopOnEntry": false,
+            "args": ["unit-test"],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            //"console": false,
+            "sourceMaps": false
+            //"outDir": null
+        },
+        {
+            "name": "Attach",
+            "type": "node",
+            "request": "attach",
+            "port": 5858
+        }
+    ]    
+}
