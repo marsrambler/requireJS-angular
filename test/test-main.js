@@ -18,7 +18,9 @@ require.config({
 
   paths: {
     app: 'public/js/app',
-    hello: 'public/js/hello',
+    'hello_func': 'public/js/hello_func',
+    'hello_funcs': 'public/js/hello_funcs',
+    'hello_cls': 'public/js/hello_cls',
     hello2: 'public/js/hello2',
     jquery: 'public/js/lib/jquery/jquery',
     angular: 'public/js/lib/angular/angular',
@@ -27,7 +29,16 @@ require.config({
   },
   shim: {
     angular : { exports : 'angular'},
-    hello : { exports: 'hello' },
+    'hello_func' : { exports: 'hello' },
+    'hello_funcs' : { 
+      init: function() {
+        return {
+          hello1: hello1,
+          hello2: hello2
+        }
+      } 
+    },
+    'hello_cls' : { exports: 'MathUtils' },
     'angularMocks': {
 			deps:['angular'],
 			'exports':'angular.mock'
